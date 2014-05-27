@@ -3,6 +3,16 @@
   <head>
     <title>Is ServiceWorker ready?</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <script>
+      (function(i,r){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+      })(window,'ga');
+
+      ga('create', 'UA-51302312-1', 'jakearchibald.github.io');
+      ga('send', 'pageview');
+    </script>
+    <script src="//www.google-analytics.com/analytics.js" async></script>
+    <script src="/isserviceworkerready/static/js/all.js" async></script>
     <link rel="stylesheet" href="/isserviceworkerready/static/css/all.css">
     <link href="//fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
     
@@ -24,9 +34,97 @@
   </ul>
 
   
-    <article class="feature">
+    
+    <article class="feature" id="serviceworker-enthusiasm">
       <header>
-        <h1 class="feature-name">Promises</h1>
+        <a href="#serviceworker-enthusiasm" class="perma">
+          <h1 class="feature-name">
+            ServiceWorker enthusiasm
+          </h1>
+        </a>
+        <p>The first thing any implementation needs.</p>
+      </header>
+      <div class="results">
+        
+          <section class="result yes">
+            <h1 class="icon chrome">Chrome</h1>
+            
+              <p class="support">
+                
+                  Supported
+                
+                
+              </p>
+            
+          </section>
+        
+          <section class="result yes">
+            <h1 class="icon firefox">Firefox</h1>
+            
+              <p class="support">
+                
+                  Supported
+                
+                
+              </p>
+            
+          </section>
+        
+          <section class="result yes">
+            <h1 class="icon opera">Opera</h1>
+            
+              <p class="support">
+                
+                  Supported
+                
+                
+              </p>
+            
+          </section>
+        
+          <section class="result no">
+            <h1 class="icon safari">Safari</h1>
+            
+              <p class="support">No support</p>
+            
+          </section>
+        
+          <section class="result no">
+            <h1 class="icon ie">IE</h1>
+            
+              <p class="support">No support</p>
+            
+          </section>
+        
+      </div>
+      
+        <ul class="details">
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          
+            <li><strong>Safari &amp; IE</strong>: No public commitment.</li>
+          
+        </ul>
+      
+    </article>
+  
+    
+    <article class="feature" id="promises">
+      <header>
+        <a href="#promises" class="perma">
+          <h1 class="feature-name">
+            Promises
+          </h1>
+        </a>
         <p>Not ServiceWorker specific, but required by ServiceWorker. <a href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects">Spec</a>.</p>
       </header>
       <div class="results">
@@ -114,13 +212,19 @@
           
             
           
+          
         </ul>
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="navigator.serviceworker">
       <header>
-        <h1 class="feature-name"><code>navigator.serviceWorker</code></h1>
+        <a href="#navigator.serviceworker" class="perma">
+          <h1 class="feature-name">
+            <code>navigator.serviceWorker</code>
+          </h1>
+        </a>
         <p>Namespace for page-side ServiceWorker API. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker">Spec</a>.</p>
       </header>
       <div class="results">
@@ -184,36 +288,47 @@
         <ul class="details">
           
             
-              <li><strong>Chrome:</strong> Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags</li>
-            
           
             
               <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config</li>
             
           
             
-              <li><strong>Opera:</strong> Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags</li>
-            
           
             
           
             
+          
+          
+            <li><strong>Chrome &amp; Opera</strong>: Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags</li>
           
         </ul>
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="register-/-unregister">
       <header>
-        <h1 class="feature-name">Register / unregister</h1>
+        <a href="#register-/-unregister" class="perma">
+          <h1 class="feature-name">
+            Register / unregister
+          </h1>
+        </a>
         <p>Register for a SW and get an instance back, unregister undoes. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-register">Spec</a>.</p>
       </header>
       <div class="results">
         
-          <section class="result no">
+          <section class="result ish">
             <h1 class="icon chrome">Chrome</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+                  since version <span class="version">35</span>
+                
+              </p>
             
           </section>
         
@@ -247,11 +362,33 @@
         
       </div>
       
+        <ul class="details">
+          
+            
+              <li><strong>Chrome:</strong> Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags</li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          
+        </ul>
+      
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="postmessage-to-&amp;-from-worker">
       <header>
-        <h1 class="feature-name"><code>postMessage</code> to &amp; from worker</h1>
+        <a href="#postmessage-to-&amp;-from-worker" class="perma">
+          <h1 class="feature-name">
+            <code>postMessage</code> to &amp; from worker
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#client">Spec</a>.</p>
       </header>
       <div class="results">
@@ -295,9 +432,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="install-event">
       <header>
-        <h1 class="feature-name">Install event</h1>
+        <a href="#install-event" class="perma">
+          <h1 class="feature-name">
+            Install event
+          </h1>
+        </a>
         <p>Install event fires in a newly discovered SW. Includes <code>InstallEvent.waitUntil()</code>. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#install-event">Spec</a>.</p>
       </header>
       <div class="results">
@@ -341,9 +483,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="installevent.replace()">
       <header>
-        <h1 class="feature-name"><code>InstallEvent.replace()</code></h1>
+        <a href="#installevent.replace()" class="perma">
+          <h1 class="feature-name">
+            <code>InstallEvent.replace()</code>
+          </h1>
+        </a>
         <p>Allow an installing worker to take over in-scope pages once installed. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#replace-method">Spec</a>.</p>
       </header>
       <div class="results">
@@ -387,9 +534,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="activate-event">
       <header>
-        <h1 class="feature-name">Activate event</h1>
+        <a href="#activate-event" class="perma">
+          <h1 class="feature-name">
+            Activate event
+          </h1>
+        </a>
         <p>Activate event fires after others become redundant. Includes <code>InstallEvent.waitUntil()</code>. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#activate-event">Spec</a>.</p>
       </header>
       <div class="results">
@@ -433,9 +585,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="update-checks">
       <header>
-        <h1 class="feature-name">Update checks</h1>
+        <a href="#update-checks" class="perma">
+          <h1 class="feature-name">
+            Update checks
+          </h1>
+        </a>
         <p>Browser checks for SW updates after navigation. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#update-algorithm">Spec</a>.</p>
       </header>
       <div class="results">
@@ -479,9 +636,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="serviceworker-lifecycle">
       <header>
-        <h1 class="feature-name">ServiceWorker lifecycle</h1>
+        <a href="#serviceworker-lifecycle" class="perma">
+          <h1 class="feature-name">
+            ServiceWorker lifecycle
+          </h1>
+        </a>
         <p>Allow a next version to be in waiting &amp; take over when appropriate.</p>
       </header>
       <div class="results">
@@ -525,9 +687,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="request">
       <header>
-        <h1 class="feature-name"><code>Request</code></h1>
+        <a href="#request" class="perma">
+          <h1 class="feature-name">
+            <code>Request</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#request-objects">Spec</a>.</p>
       </header>
       <div class="results">
@@ -571,9 +738,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="response">
       <header>
-        <h1 class="feature-name"><code>Response</code></h1>
+        <a href="#response" class="perma">
+          <h1 class="feature-name">
+            <code>Response</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#response-objects">Spec</a>.</p>
       </header>
       <div class="results">
@@ -617,9 +789,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="fetch(request)">
       <header>
-        <h1 class="feature-name"><code>fetch(request)</code></h1>
+        <a href="#fetch(request)" class="perma">
+          <h1 class="feature-name">
+            <code>fetch(request)</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#service-worker-global-scope-fetch">Spec</a>.</p>
       </header>
       <div class="results">
@@ -663,9 +840,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="cache">
       <header>
-        <h1 class="feature-name"><code>Cache</code></h1>
+        <a href="#cache" class="perma">
+          <h1 class="feature-name">
+            <code>Cache</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#cache">Spec</a>.</p>
       </header>
       <div class="results">
@@ -709,9 +891,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="caches">
       <header>
-        <h1 class="feature-name"><code>caches</code></h1>
+        <a href="#caches" class="perma">
+          <h1 class="feature-name">
+            <code>caches</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#service-worker-global-scope-caches">Spec</a>.</p>
       </header>
       <div class="results">
@@ -755,9 +942,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="getall()">
       <header>
-        <h1 class="feature-name"><code>getAll()</code></h1>
+        <a href="#getall()" class="perma">
+          <h1 class="feature-name">
+            <code>getAll()</code>
+          </h1>
+        </a>
         <p>Get all workers for an origin. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-getAll">Spec</a>.</p>
       </header>
       <div class="results">
@@ -801,9 +993,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="navigator.serviceworker.whenready()">
       <header>
-        <h1 class="feature-name"><code>navigator.serviceWorker.whenReady()</code></h1>
+        <a href="#navigator.serviceworker.whenready()" class="perma">
+          <h1 class="feature-name">
+            <code>navigator.serviceWorker.whenReady()</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-when-ready">Spec</a>.</p>
       </header>
       <div class="results">
@@ -847,9 +1044,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="fetch-event">
       <header>
-        <h1 class="feature-name">Fetch event</h1>
+        <a href="#fetch-event" class="perma">
+          <h1 class="feature-name">
+            Fetch event
+          </h1>
+        </a>
         <p>Fires for pages and all sub-resources. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#fetch-event">Spec</a>.</p>
       </header>
       <div class="results">
@@ -893,9 +1095,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="fetchevent.request">
       <header>
-        <h1 class="feature-name"><code>fetchEvent.request</code></h1>
+        <a href="#fetchevent.request" class="perma">
+          <h1 class="feature-name">
+            <code>fetchEvent.request</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#fetch-event-section">Spec</a>.</p>
       </header>
       <div class="results">
@@ -939,9 +1146,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="fetchevent.context">
       <header>
-        <h1 class="feature-name"><code>fetchEvent.context</code></h1>
+        <a href="#fetchevent.context" class="perma">
+          <h1 class="feature-name">
+            <code>fetchEvent.context</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#fetch-event-section">Spec</a>.</p>
       </header>
       <div class="results">
@@ -985,9 +1197,14 @@
       
     </article>
   
-    <article class="feature">
+    
+    <article class="feature" id="fetchevent.respondwith()">
       <header>
-        <h1 class="feature-name"><code>fetchEvent.respondWith()</code></h1>
+        <a href="#fetchevent.respondwith()" class="perma">
+          <h1 class="feature-name">
+            <code>fetchEvent.respondWith()</code>
+          </h1>
+        </a>
         <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#fetch-event-section">Spec</a>.</p>
       </header>
       <div class="results">
