@@ -4,6 +4,10 @@
     <title>Is ServiceWorker ready?</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <script>
+      // force https
+      if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+        location.protocol = 'https:';
+      }
       (function(i,r){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
       })(window,'ga');
@@ -331,17 +335,29 @@
             
           </section>
         
-          <section class="result no">
-            <h1 class="icon firefox">Firefox</h1>
+          <section class="result ish">
+            <h1 class="icon firefox-nightly">Firefox</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
             
           </section>
         
-          <section class="result no">
+          <section class="result ish">
             <h1 class="icon opera">Opera</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+                  since version <span class="version">21</span>
+                
+              </p>
             
           </section>
         
@@ -364,7 +380,9 @@
         <ul class="details">
           
             
-              <li><strong>Chrome:</strong> Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
+          
+            
+              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
@@ -373,8 +391,8 @@
           
             
           
-            
           
+            <li><strong>Chrome &amp; Opera</strong>: Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
           
         </ul>
       
@@ -411,6 +429,88 @@
             
           </section>
         
+          <section class="result ish">
+            <h1 class="icon opera-developer">Opera</h1>
+            
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
+            
+          </section>
+        
+          <section class="result no">
+            <h1 class="icon safari">Safari</h1>
+            
+              <p class="support">No support</p>
+            
+          </section>
+        
+          <section class="result no">
+            <h1 class="icon ie">IE</h1>
+            
+              <p class="support">No support</p>
+            
+          </section>
+        
+      </div>
+      
+        <ul class="details">
+          
+            
+              <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
+            
+          
+            
+          
+            
+              <li><strong>Opera:</strong> Requires <a href="http://www.opera.com/developer">Opera Developer</a> and #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
+            
+          
+            
+          
+            
+          
+          
+            <li><strong>Chrome & Opera</strong>: <code>messageEvent.source</code> is null within the worker, but you can pass your own <code>MessageChannel</code> for 2-way communication.</li>
+          
+        </ul>
+      
+    </article>
+  
+    
+    <article class="feature" id="fetch-event">
+      <header>
+        <a href="#fetch-event" class="perma">
+          <h1 class="feature-name">
+            Fetch event
+          </h1>
+        </a>
+        <p>Fires for pages and all sub-resources. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#fetch-event">Spec</a>. <a href="/isserviceworkerready/demos/fetchevent/">Test</a>.</p>
+      </header>
+      <div class="results">
+        
+          <section class="result no">
+            <h1 class="icon chrome">Chrome</h1>
+            
+              <p class="support">No support</p>
+            
+          </section>
+        
+          <section class="result ish">
+            <h1 class="icon firefox-nightly">Firefox</h1>
+            
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
+            
+          </section>
+        
           <section class="result no">
             <h1 class="icon opera">Opera</h1>
             
@@ -437,11 +537,9 @@
         <ul class="details">
           
             
-              <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
-            
-              <li><strong>Chrome:</strong> <code>messageEvent.source</code> is null within the worker, but you can pass your own <code>MessageChannel</code> for 2-way communication.</li>
-            
           
+            
+              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
@@ -452,57 +550,6 @@
           
           
         </ul>
-      
-    </article>
-  
-    
-    <article class="feature" id="fetch-event">
-      <header>
-        <a href="#fetch-event" class="perma">
-          <h1 class="feature-name">
-            Fetch event
-          </h1>
-        </a>
-        <p>Fires for pages and all sub-resources. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#fetch-event">Spec</a>. <a href="/isserviceworkerready/demos/fetchevent/">Test</a>.</p>
-      </header>
-      <div class="results">
-        
-          <section class="result no">
-            <h1 class="icon chrome">Chrome</h1>
-            
-              <p class="support">No support</p>
-            
-          </section>
-        
-          <section class="result no">
-            <h1 class="icon firefox">Firefox</h1>
-            
-              <p class="support">No support</p>
-            
-          </section>
-        
-          <section class="result no">
-            <h1 class="icon opera">Opera</h1>
-            
-              <p class="support">No support</p>
-            
-          </section>
-        
-          <section class="result no">
-            <h1 class="icon safari">Safari</h1>
-            
-              <p class="support">No support</p>
-            
-          </section>
-        
-          <section class="result no">
-            <h1 class="icon ie">IE</h1>
-            
-              <p class="support">No support</p>
-            
-          </section>
-        
-      </div>
       
     </article>
   
@@ -525,10 +572,15 @@
             
           </section>
         
-          <section class="result no">
-            <h1 class="icon firefox">Firefox</h1>
+          <section class="result ish">
+            <h1 class="icon firefox-nightly">Firefox</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
             
           </section>
         
@@ -555,6 +607,23 @@
         
       </div>
       
+        <ul class="details">
+          
+            
+          
+            
+              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+            
+          
+            
+          
+            
+          
+            
+          
+          
+        </ul>
+      
     </article>
   
     
@@ -576,10 +645,15 @@
             
           </section>
         
-          <section class="result no">
-            <h1 class="icon firefox">Firefox</h1>
+          <section class="result ish">
+            <h1 class="icon firefox-nightly">Firefox</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
             
           </section>
         
@@ -605,6 +679,25 @@
           </section>
         
       </div>
+      
+        <ul class="details">
+          
+            
+          
+            
+              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+            
+              <li><strong>Firefox:</strong> Can only respond with non-standard <code>SameOriginResponse</code> object</li>
+            
+          
+            
+          
+            
+          
+            
+          
+          
+        </ul>
       
     </article>
   
@@ -678,10 +771,15 @@
             
           </section>
         
-          <section class="result no">
-            <h1 class="icon firefox">Firefox</h1>
+          <section class="result ish">
+            <h1 class="icon firefox-nightly">Firefox</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
             
           </section>
         
@@ -707,6 +805,23 @@
           </section>
         
       </div>
+      
+        <ul class="details">
+          
+            
+          
+            
+              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+            
+          
+            
+          
+            
+          
+            
+          
+          
+        </ul>
       
     </article>
   
@@ -780,10 +895,15 @@
             
           </section>
         
-          <section class="result no">
-            <h1 class="icon firefox">Firefox</h1>
+          <section class="result ish">
+            <h1 class="icon firefox-nightly">Firefox</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
             
           </section>
         
@@ -809,6 +929,23 @@
           </section>
         
       </div>
+      
+        <ul class="details">
+          
+            
+          
+            
+              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+            
+          
+            
+          
+            
+          
+            
+          
+          
+        </ul>
       
     </article>
   
