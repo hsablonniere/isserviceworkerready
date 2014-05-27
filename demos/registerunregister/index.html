@@ -36,7 +36,7 @@
     log("whenReady", navigator.serviceWorker.whenReady);
 
     if (navigator.serviceWorker.whenReady) {
-      navigator.serviceWorker.whenReady.then(function() {
+      navigator.serviceWorker.whenReady().then(function() {
         log("whenReady resolved");
       });
     }
