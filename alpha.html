@@ -12,7 +12,6 @@
       ga('send', 'pageview');
     </script>
     <script src="//www.google-analytics.com/analytics.js" async></script>
-    <script src="/isserviceworkerready/static/js/all.js" async></script>
     <link rel="stylesheet" href="/isserviceworkerready/static/css/all.css">
     <link href="//fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
     
@@ -225,7 +224,7 @@
             <code>navigator.serviceWorker</code>
           </h1>
         </a>
-        <p>Namespace for page-side ServiceWorker API. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker">Spec</a>.</p>
+        <p>Namespace for page-side ServiceWorker API. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker">Spec</a>. <a href="/isserviceworkerready/demos/navigator.serviceWorker/">Demo</a>.</p>
       </header>
       <div class="results">
         
@@ -290,7 +289,7 @@
             
           
             
-              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config</li>
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
@@ -300,7 +299,7 @@
             
           
           
-            <li><strong>Chrome &amp; Opera</strong>: Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags</li>
+            <li><strong>Chrome &amp; Opera</strong>: Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
           
         </ul>
       
@@ -314,7 +313,7 @@
             Register / unregister
           </h1>
         </a>
-        <p>Register for a SW and get an instance back, unregister undoes. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-register">Spec</a>.</p>
+        <p>Register for a SW and get an instance back, unregister undoes. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-register">Spec</a>. <a href="/isserviceworkerready/demos/registerunregister/">Demo</a>.</p>
       </header>
       <div class="results">
         
@@ -365,7 +364,7 @@
         <ul class="details">
           
             
-              <li><strong>Chrome:</strong> Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags</li>
+              <li><strong>Chrome:</strong> Requires #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
             
           
             
@@ -389,14 +388,19 @@
             <code>postMessage</code> to &amp; from worker
           </h1>
         </a>
-        <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#client">Spec</a>.</p>
+        <p><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#client">Spec</a>. <a href="/isserviceworkerready/demos/postMessage/">Demo</a>.</p>
       </header>
       <div class="results">
         
-          <section class="result no">
-            <h1 class="icon chrome">Chrome</h1>
+          <section class="result ish">
+            <h1 class="icon canary">Chrome</h1>
             
-              <p class="support">No support</p>
+              <p class="support">
+                
+                  Somewhat supported
+                
+                
+              </p>
             
           </section>
         
@@ -429,6 +433,25 @@
           </section>
         
       </div>
+      
+        <ul class="details">
+          
+            
+              <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-service-worker and #enable-experimental-web-platform-features in about:flags.</li>
+            
+              <li><strong>Chrome:</strong> <code>messageEvent.source</code> is null within the worker, but you can pass your own <code>MessageChannel</code> for 2-way communication.</li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          
+        </ul>
       
     </article>
   
