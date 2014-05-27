@@ -1,1 +1,1 @@
-Cannot GET /isserviceworkerready/demos/registerunregister/sw.js
+console.log("SW startup");
