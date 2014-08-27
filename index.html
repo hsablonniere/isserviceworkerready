@@ -319,19 +319,17 @@
             Register / unregister
           </h1>
         </a>
-        <p>Register for a SW and get an instance back, unregister undoes. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-register">Spec</a>. <a href="/isserviceworkerready/demos/registerunregister/">Test</a>.</p>
+        <p>Register for a SW and get a registration instance back, unregister undoes. <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#navigator-service-worker-register">Spec</a>. <a href="/isserviceworkerready/demos/registerunregister/">Test</a>.</p>
       </header>
       <div class="results">
         
           <section class="result ish">
-            <h1 class="icon chrome">Chrome</h1>
+            <h1 class="icon canary">Chrome</h1>
             
               <p class="support">
                 
                   Somewhat supported
                 
-                
-                  since version <span class="version">35</span>
                 
               </p>
             
@@ -349,17 +347,10 @@
             
           </section>
         
-          <section class="result ish">
+          <section class="result no">
             <h1 class="icon opera">Opera</h1>
             
-              <p class="support">
-                
-                  Somewhat supported
-                
-                
-                  since version <span class="version">21</span>
-                
-              </p>
+              <p class="support">No support</p>
             
           </section>
         
@@ -382,19 +373,19 @@
         <ul class="details">
           
             
-          
-            
-              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+              <li><strong>Chrome:</strong> Requires #enable-experimental-web-platform-features in about:flags.</li>
             
           
             
-          
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
           
+            
           
-            <li><strong>Chrome &amp; Opera</strong>: Requires #enable-experimental-web-platform-features in about:flags.</li>
+            
+          
           
         </ul>
       
@@ -506,15 +497,10 @@
             
           </section>
         
-          <section class="result ish">
-            <h1 class="icon opera-developer">Opera</h1>
+          <section class="result no">
+            <h1 class="icon opera">Opera</h1>
             
-              <p class="support">
-                
-                  Somewhat supported
-                
-                
-              </p>
+              <p class="support">No support</p>
             
           </section>
         
@@ -539,19 +525,17 @@
             
               <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
             
-          
-            
-          
-            
-              <li><strong>Opera:</strong> Requires <a href="http://www.opera.com/developer">Opera Developer</a> and #enable-experimental-web-platform-features in about:flags.</li>
+              <li><strong>Chrome:</strong> <code>messageEvent.source</code> is <a href="https://crbug.com/403693">null within the worker</a>, but you can pass your own <code>MessageChannel</code> for 2-way communication.</li>
             
           
             
           
             
           
+            
           
-            <li><strong>Chrome & Opera</strong>: <code>messageEvent.source</code> is <a href="https://crbug.com/403693">null within the worker</a>, but you can pass your own <code>MessageChannel</code> for 2-way communication.</li>
+            
+          
           
         </ul>
       
@@ -623,7 +607,7 @@
             
           
             
-              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
@@ -705,7 +689,7 @@
             
           
             
-              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
               <li><strong>Firefox:</strong> Partial implementation.</li>
             
@@ -787,7 +771,7 @@
             
           
             
-              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
               <li><strong>Firefox:</strong> Can only respond with non-standard <code>SameOriginResponse</code> object</li>
             
@@ -920,7 +904,7 @@
             
           
             
-              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
@@ -1068,7 +1052,7 @@
             
           
             
-              <li><strong>Firefox:</strong> Requires a <a href="http://blog.nikhilism.com/2014/05/serviceworker-implementation-status-in-firefox.html">special build</a> and dom.serviceWorkers.enabled in about:config.</li>
+              <li><strong>Firefox:</strong> Requires a <a href="http://nightly.mozilla.org/">nightly build</a> and dom.serviceWorkers.enabled in about:config.</li>
             
           
             
@@ -1520,15 +1504,10 @@
       </header>
       <div class="results">
         
-          <section class="result ish">
-            <h1 class="icon canary">Chrome</h1>
+          <section class="result no">
+            <h1 class="icon chrome">Chrome</h1>
             
-              <p class="support">
-                
-                  Somewhat supported
-                
-                
-              </p>
+              <p class="support">No support</p>
             
           </section>
         
@@ -1565,7 +1544,7 @@
         <ul class="details">
           
             
-              <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
+              <li><strong>Chrome:</strong> API exists in Canary, but never resolves</li>
             
           
             
