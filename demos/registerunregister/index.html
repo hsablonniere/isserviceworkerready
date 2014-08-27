@@ -23,14 +23,14 @@
       scope: './'
     }).then(function(sw) {
       log("Registered!", sw);
-      /*
+      
       setTimeout(function() {
         sw.unregister().then(function() {
           log("Unregistered");
         }).catch(function(err) {
           log("Unreg failed", err);
         });
-      }, 3000);*/
+      }, 3000);
     }).catch(function(err) {
       log("Reg failed", err);
     });
