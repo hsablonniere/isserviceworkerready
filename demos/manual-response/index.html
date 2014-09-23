@@ -23,24 +23,9 @@
       scope: './'
     }).then(function(sw) {
       log("Registered!", sw);
-      
-      setTimeout(function() {
-        sw.unregister().then(function() {
-          log("Unregistered");
-        }).catch(function(err) {
-          log("Unreg failed", err);
-        });
-      }, 3000);
+      log("You should get a different response when you refresh");
     }).catch(function(err) {
-      log("Reg failed", err);
+      log("Error", err);
     });
-
-    log("ready", navigator.serviceWorker.ready);
-
-    if (navigator.serviceWorker.ready) {
-      navigator.serviceWorker.ready.then(function() {
-        log("ready resolved");
-      });
-    }
   </script></body>
 </html>
