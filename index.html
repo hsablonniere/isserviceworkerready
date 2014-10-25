@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Is ServiceWorker ready?</title> 
+    <title>Is ServiceWorker ready?</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <script>
       // force https
@@ -281,7 +281,9 @@
             
               <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
             
-              <li><strong>Chrome:</strong> chrome://serviceworker-internals/ shows console logs, devtools, allows stop/start/unregister</li>
+              <li><strong>Chrome:</strong> chrome://inspect#service-worker lets you inspect and debug Service Workers.</li>
+            
+              <li><strong>Chrome:</strong> chrome://serviceworker-internals/ shows console logs, devtools, allows stop/start/unregister.</li>
             
           
             
@@ -685,7 +687,7 @@
             
               <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
             
-              <li><strong>Chrome:</strong> Partial implementation, covers url & some headers.</li>
+              <li><strong>Chrome:</strong> Partial implementation, covers method, url, referer and header. Note: credentials are not accurately initialized (<a href="http://crbug.com/418509">crbug#418509</a>).</li>
             
           
             
@@ -1203,8 +1205,6 @@
             
               <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
             
-              <li><strong>Chrome:</strong> Known issue: same-scope subsequent registrations with different script urls <a href="http://crbug.com/398355">eagerly discard</a> the existing registration.</li>
-            
           
             
           
@@ -1277,10 +1277,6 @@
           
             
               <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
-            
-              <li><strong>Chrome:</strong> Caveats: only supports GET and HEAD methods; omit option for RequestCredentials is not supported; body is missing.</li>
-            
-              <li><strong>Chrome:</strong> Based on an earlier version of the spec, so <code>request.body.asJSON</code> rather than <code>request.json</code></li>
             
           
             
@@ -1355,9 +1351,7 @@
             
               <li><strong>Chrome:</strong> Requires <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> and #enable-experimental-web-platform-features in about:flags.</li>
             
-              <li><strong>Chrome:</strong> Only supports blobs and strings as the body so far.</li>
-            
-              <li><strong>Chrome:</strong> Based on an earlier version of the spec, so <code>request.body.asJSON</code> rather than <code>request.json</code></li>
+              <li><strong>Chrome:</strong> Caveat: URLSearchParams as well as creating a Response from FormData are not supported yet. (<a href="https://code.google.com/p/chromium/issues/detail?id=412027#c5">crbug#412027</a>).</li>
             
           
             
